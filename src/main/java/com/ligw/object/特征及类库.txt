@@ -1,0 +1,36 @@
+面向对象编程三大基本特征：
+    继承
+    封装（encapsulation）：高内聚 低耦合
+    多态（polymorphism）：必须有继承且重写方法 编译时类型-运行时类型
+
+垃圾回收机制：
+    将对象空间赋值为null 即可 垃圾回收机制会回收所有“不可达”对象的内存空间
+    程序员无权调用垃圾回收器
+    程序眼可以通过System.gc() 通知GC运行 但是JAVA规范并不能保证立刻运行
+    finalize方法 是java提供给程序员来释放对象或资源的方法，但是尽量少用
+
+java  常用包
+    java.lang
+    java语言核心类 如：String Math Integer System Thread。提供常用功能
+
+    java.awt
+    包含了构成抽象窗口工具集的多各类，这些类被用于构建和管理应用程序的图形用户管理界面（GUI）
+
+    java.net
+    执行与网络操作相关的类
+
+    java.io
+    包含能提供输入输出功能的类
+
+    java.util
+    包含一些实用工具类，如定义系统特性使用与日期日历相关的函数
+
+java.util.Scanner 获取键盘输入对象
+    Scanner sc = new Scanner(System.in);
+    String str = s.next();
+    int i = s.nextInt();
+
+
+
+
+
