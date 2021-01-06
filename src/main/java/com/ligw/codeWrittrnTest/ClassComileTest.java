@@ -2,7 +2,7 @@
  * Company
  * Copyright (C) 2004-2018 All Rights Reserved.
  */
-package com.ligw.CodeWrittrnTest;
+package com.ligw.codeWrittrnTest;
 
 /**
  * java类编译过程测试
