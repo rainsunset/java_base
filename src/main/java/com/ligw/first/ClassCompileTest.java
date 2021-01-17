@@ -2,14 +2,14 @@
  * Company
  * Copyright (C) 2004-2018 All Rights Reserved.
  */
-package com.ligw.codeWrittrnTest;
+package com.ligw.first;
 
 /**
  * java类编译过程测试
  * @author ligw
- * @version $Id ClassComileTest.java, v 0.1 2018-03-28 23:23 ligw Exp $$
+ * @version $Id ClassCompileTest.java, v 0.1 2018-03-28 23:23 ligw Exp $$
  */
-public class ClassComileTest {
+public class ClassCompileTest {
 
     public static void main(String[] args) {
         new TestB();

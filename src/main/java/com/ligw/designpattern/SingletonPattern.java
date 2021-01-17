@@ -1,4 +1,4 @@
-package com.ligw.codeWrittrnTest;
+package com.ligw.designpattern;
 
 /**
  * @Description: 尽可能多的单例模式

@@ -2,7 +2,7 @@
  * Company
  * Copyright (C) 2004-2018 All Rights Reserved.
  */
-package com.ligw.object;
+package com.ligw.first;
 
 /**
  * 数据类型转换 Type conversion

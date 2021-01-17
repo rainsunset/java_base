@@ -1,4 +1,4 @@
-package com.ligw.codeWrittrnTest;
+package com.ligw.first;
 
 /**
  * @Description: i++测试-验证内存模型

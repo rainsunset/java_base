@@ -2,7 +2,7 @@
  * Company
  * Copyright (C) 2004-2018 All Rights Reserved.
  */
-package com.ligw.object;
+package com.ligw.first;
 
 /**
  * 位运算 Bit operation

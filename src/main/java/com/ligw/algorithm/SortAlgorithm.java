@@ -2,7 +2,7 @@
  * Company
  * Copyright (C) 2004-2018 All Rights Reserved.
  */
-package com.ligw.codeWrittrnTest;
+package com.ligw.algorithm;
 
 /**
  * 排序算法
