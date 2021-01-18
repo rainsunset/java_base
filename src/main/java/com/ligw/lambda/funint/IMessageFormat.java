@@ -14,4 +14,19 @@ public interface IMessageFormat {
      * @return
      */
     String format(String message);
+
+    // 静态方法
+
+    /**
+     * 静态方法
+     *
+     * @param message
+     * @return
+     */
+    static boolean verify(String message) {
+        if (null == message || "".equals(message)) {
+            return false;
+        }
+        return true;
+    }
 }

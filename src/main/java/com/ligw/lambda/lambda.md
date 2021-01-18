@@ -14,10 +14,18 @@
 
 **lambda基础**
 * 函数式接口(function interface)
-> 只包含一个接口方法的特殊接口,注解:@FunctionallInterface
+> 只包含一个"抽象"方法的特殊接口,注解:@FunctionallInterface\
+> 函数式接口中允许存在：(唯一的)抽象接口方法、默认接口方法、静态接口方法、继承自Object的抽象方法\
+> lambda表达式只能操作一个方法。lambda表达式核心就是一个函数式接口的实现。
 * 常见的函数接口
-> 默认接口方法、静态接口方法
+> java.lang.Runnable\
+> java.lang.Comparable\
+> java.lang.Comparator\
+> java.io.FileFilter\
+> .....
+> java.util.function包提供了常用的函数式功能接口
 * lambda基本语法
+
 * 变量捕获
 * 类型检查
 * lambda运行原理

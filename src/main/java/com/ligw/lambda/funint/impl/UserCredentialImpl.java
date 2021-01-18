@@ -7,7 +7,7 @@ import com.ligw.lambda.funint.IUserCredential;
  * @Author: Amo
  * @CreateDate: 2021/1/17
  */
-public class UserCredentialimpl implements IUserCredential {
+public class UserCredentialImpl implements IUserCredential {
 
     @Override
     public String verify(String name) {
