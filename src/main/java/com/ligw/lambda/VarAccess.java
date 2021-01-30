@@ -63,7 +63,7 @@ public class VarAccess {
             String s3 = "lambda内部变量";
             // 可直接访问全局变量
             System.out.println(s1);
-            // 也可用this关键字访问全局变量
+            // 也可用this关键字访问全局变量 此时this关键字表示的是所述方法所在类的对象
             System.out.println(this.s1);
             // 当然也是可以直接修改的
             s1 = "lambda修改全局变量";
@@ -79,7 +79,7 @@ public class VarAccess {
             s3 += "直接修改";
             System.out.println(s3);
             // lambda表达式中的变量操作相对匿名内部类优化了this关键字的作用域，不再单独建立对象作用域，
-            // 表达式本社呢就是所属对象本身的一部分
+            // 表达式本身就是所属对象本身的一部分
         }
         ).start();
     }
