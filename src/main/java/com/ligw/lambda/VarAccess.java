@@ -26,7 +26,7 @@ public class VarAccess {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        System.out.println("main-lambda"+ lambdaVarAccess.s1);
+        System.out.println("main-lambda:"+ lambdaVarAccess.s1);
     }
 
     public void innerClassVar() {
