@@ -1,4 +1,5 @@
 ## 资源
+* [github.com/sjsdfg/effective-java-3rd-chinese](https://github.com/sjsdfg/effective-java-3rd-chinese)
 
 * [effective-java-2nd 中文版 ](https://pan.baidu.com/s/1R6H9UHbFYubWWY9HrclZ2A)
 * [effective-java-3rd 英文版 ](https://pan.baidu.com/s/1mJx5ZrOD_RPjf3ghQnBV5g)
