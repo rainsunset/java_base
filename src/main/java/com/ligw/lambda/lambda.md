@@ -15,7 +15,7 @@
 **lambda基础**
 * 函数式接口(function interface)(FunInt.java)
 > 只包含一个"抽象"方法的特殊接口,注解:@FunctionallInterface\
-> 函数式接口中允许存在：(唯一的)抽象接口方法、默认接口方法、静  态接口方法、继承自Object的抽象方法\
+> 函数式接口中允许存在：(唯一的)抽象接口方法、默认接口方法、静态接口方法、继承自Object的抽象方法\
 > lambda表达式只能操作一个方法。lambda表达式核心就是一个函数式接口的实现。
 * 常见的函数接口(FunIntInJre.java)
 > java.lang.Runnable\
@@ -35,11 +35,15 @@
 > 表达式类型检查\
 > 参数类型检查\
 > 方法重载对lambda表达式的影响
-* lambda运行原理()
-> 
+* lambda运行原理(ShowHowCompile.java)
+> lambda表达式在JVM底层解析成私有静态方法和匿名内部类型\
+> 通过实现接口的匿名内部类型中的接口方法调用静态实现方法，完成lambda表达式的执行
 
 **lambda高级**
-* 方法引用   
+* 方法引用(本质是对方法调用的简化)(MethodReferences.java)
+> 静态方法引用 \
+> 实例方法引用 \
+> 构造方法引用
 * stream API
 * Stream原理
 * 集合元素操作
