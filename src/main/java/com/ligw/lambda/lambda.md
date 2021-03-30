@@ -44,7 +44,7 @@
 > 静态方法引用 \
 > 实例方法引用 \
 > 构造方法引用
-* stream API
+* stream API(StreamExample.java)
 * Stream原理
 * 集合元素操作
 * 实际需求重构
