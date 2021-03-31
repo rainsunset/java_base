@@ -12,13 +12,24 @@ public class StreamPerformance {
     public static void main(String[] args) {
 //        dealIntArrayListPerformance();
 
+        // dealObjectArrayListPerformance();
+
+        // 结论 ：
+        //      在复杂对象的处理中，并行stream（parallelStream）要明显优于外部迭代方式。
+        //      stream在处理复杂对象时会带来性能提升。并且随着cup核心线程数的增加，并行stream（parallelStream）的性能提升是很明显的。
+        //      对于简单数据的迭代处理，用外部迭代进行操作。如果在性能上有一定要求，可以用并行stream进行操作。
+        //      对于复杂对象的处理，stream串行操作与外部迭代相差无几，甚至超过外部迭代。如果在性能上有一定要求，可以用并行stream进行操作
+        //
+    }
+
+    private static void dealObjectArrayListPerformance() {
         StreamPerformance sf = new StreamPerformance();
         int tryTimes = 20;
         Random random = new Random();
         List<List<MyProject>> projectListList = new ArrayList<>();
         for (int j = 0; j < tryTimes; j++) {
             List<MyProject> projectList = new ArrayList<>();
-            for (int i = 0; i < 100000; i++) {
+            for (int i = 0; i < 200000; i++) {
                 projectList.add(new MyProject("MyProject" + i, i, random.nextInt(Integer.MAX_VALUE)));
             }
             projectListList.add(projectList);
