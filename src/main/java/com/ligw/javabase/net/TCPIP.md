@@ -96,7 +96,7 @@ route -n
 ```shell script
 # 显示网关与mac地址的对应关系
 arp
-# 如果链路层不知到网关的mac地址，链路层会发一个arp广播
+# 如果链路层不知到网关的mac地址，链路层会发一个arp广播（ping的包是icmp）
 tcpdump -nn -i eth0 port 80 or arp
 # 打印网关与mac地址映射表
 arp -a
