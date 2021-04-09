@@ -54,7 +54,7 @@ public class Welcom{
     }
 }
 
-javac *.java  变异成字节码文件
+javac *.java  编译成字节码文件
 java className 执行类文件
 
 JAVA内部采用Unicode编码
