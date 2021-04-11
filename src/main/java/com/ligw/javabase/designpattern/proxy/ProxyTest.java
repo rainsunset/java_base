@@ -6,11 +6,6 @@ import com.ligw.javabase.designpattern.proxy.staticproxy.*;
 import java.lang.reflect.InvocationTargetException;
 import java.net.MalformedURLException;
 
-/**
- * @Description: TODO
- * @Author: Amo
- * @CreateDate: 2021/4/11
- */
 public class ProxyTest {
 
     // 实现 Daoa，Daob都有query功能;Daoa要附加打印入参功能;Daoa和Daob要附加统计耗时功能

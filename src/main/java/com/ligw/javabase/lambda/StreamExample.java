@@ -5,13 +5,7 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-/**
- * @Description: TODO
- * @Author: Amo
- * @CreateDate: 2021/3/26
- */
 public class StreamExample {
-
 
     /**
      * stream常见操作api

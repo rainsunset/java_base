@@ -2,11 +2,6 @@ package com.ligw.javabase.lambda.bo;
 
 import java.util.List;
 
-/**
- * @Description: TODO
- * @Author: Amo
- * @CreateDate: 2021/1/30
- */
 public class StudentBO {
     String name;
 
