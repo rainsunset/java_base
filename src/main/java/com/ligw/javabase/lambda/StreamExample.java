@@ -79,6 +79,8 @@ public class StreamExample {
         Arrays.stream(strArray).forEach(System.out::println);
 
         // 4. peek(Consumer<? super T> action) 无状态中间操作，适用于迭代数据完成数据数据的依次处理过程
+        // peek不会中断流，后面可以对流继续操作，foreach会中断流，只能进行遍历
+        // peek入参是Consumer，没有返回值；map入参是Function，是需要返回值的；当我们只需要对元素内部处理，使用peek是比较合适的，如果我们需要返回一个自定义的Stream时候，需要使用map
         Arrays.stream(strArray)
                 .peek(obj -> System.out.println("peek1:" + obj))
                 .peek(obj -> System.out.println("peek2:" + obj))
