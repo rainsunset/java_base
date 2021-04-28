@@ -2,7 +2,7 @@
  * Company
  * Copyright (C) 2004-2018 All Rights Reserved.
  */
-package com.ligw.javabase.lang;
+package com.ligw.javabase.lang.thread;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
