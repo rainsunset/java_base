@@ -14,18 +14,19 @@ public class StringTest {
 
     public static void main(String[] args) {
         // String 不可变字符序列
-        String str1 = new String("abcd");
-        String str2 = new String("abcd");
+        String str1 = new String("abc");
+        String str2 = new String("abc");
         String str3 = "abc";
         String str4 = "abc";
         //内存分析 -
-        System.out.println("String Object >> " + (str1 == str2));
-        System.out.println("String BaseData >> " + (str3 == str4));
+        System.out.println("String Object >> " + (str1 == str2)); // false
+        System.out.println("String BaseData >> " + (str3 == str4)); // true
+        System.out.println("String Object->BaseData >> " + (str1 == str3)); // false
         //获取文件格式
         String fileName = "lesson1.mp4";
-        System.out.println(fileName.lastIndexOf("."));
+        System.out.println(fileName.lastIndexOf(".")); // 7
         //substring 包前不包后
-        System.out.println(fileName.substring(fileName.lastIndexOf(".") + 1));
+        System.out.println(fileName.substring(fileName.lastIndexOf(".") + 1)); //mp4
         String str5 = "  你好！这里是中国，你 哪个 绺子的? ";
         System.out.println(str5.charAt(2));
         System.out.println("trim前：" + str5.length() + "trim后：" + str5.trim().length());
