@@ -32,7 +32,7 @@ public class MathTest {
         // 平方根
         double sqrt = Math.sqrt(1.1); // 1.0488088481701516
 
-        // BigInteger
+        // BigDecimal
         BigDecimal bd1 = new BigDecimal("105.5555");
         BigDecimal bd2 = new BigDecimal("-105.5555");
         // +
