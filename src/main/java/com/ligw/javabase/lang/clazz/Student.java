@@ -1,7 +1,7 @@
 package com.ligw.javabase.lang.clazz;
 
 
-public class Student extends YangPerson {
+public class Student extends YangPerson{
     private String grade;
 
     public String school;
@@ -34,5 +34,21 @@ public class Student extends YangPerson {
     private void setGrade(String grade) {
         System.out.println("in private methord getGrade");
         this.grade = grade;
+    }
+
+    /**
+     * 浅层clone
+     *
+     * @return
+     */
+    @Override
+    public Student clone() {
+        Student student = null;
+        try {
+            student = (Student) super.clone();
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace();
+        }
+        return student;
     }
 }

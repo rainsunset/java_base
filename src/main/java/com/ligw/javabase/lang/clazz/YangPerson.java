@@ -1,6 +1,8 @@
 package com.ligw.javabase.lang.clazz;
 
-public class YangPerson {
+import java.io.Serializable;
+
+public class YangPerson implements Serializable ,Cloneable{
     private String name;
 
     public static String COUNTRY = "CHINA";

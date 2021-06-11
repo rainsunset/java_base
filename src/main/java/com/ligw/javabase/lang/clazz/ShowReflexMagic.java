@@ -1,5 +1,8 @@
 package com.ligw.javabase.lang.clazz;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
@@ -7,7 +10,7 @@ import java.lang.reflect.Method;
 
 public class ShowReflexMagic {
 
-    public static void main(String[] args) throws InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException, NoSuchFieldException {
+    public static void main(String[] args) {
 
 //        getClassObj();
 //        whenLoadClassObj();
@@ -15,8 +18,53 @@ public class ShowReflexMagic {
 //        getMethord();
 
 //        getField();
-        return;
 
+        creatObj();
+        return;
+    }
+
+    /**
+     * 创建对象的几种方式
+     */
+    private static void creatObj() {
+        // 1. new
+        Student student = new Student();
+        try {
+            // 2. Class.newInstance (利用反射)调用无参的构造函数创建对象。
+            Class<Student> aClass = (Class<Student>) Class.forName("com.ligw.javabase.lang.clazz.Student");
+            Student student11 = aClass.newInstance();
+            Class<Student> studentClass = Student.class;
+            Student student12 = studentClass.newInstance();
+            // 3. Constructor.newInstance (利用反射)调用无参/有参和私有的构造函数
+            // 事实上Class的newInstance方法内部调用Constructor的newInstance方法
+            Constructor<Student> constructors = studentClass.getConstructor();
+            Student student21 = constructors.newInstance();
+            System.out.println(student21.school);
+            Constructor<Student> declaredConstructor = studentClass.getDeclaredConstructor(String.class);
+            declaredConstructor.setAccessible(true);
+            Student student22 = declaredConstructor.newInstance("二年纪");
+            System.out.println(student22.school);
+            // 4. clone
+            // 首先要实现(标记)接口Cloneable，其次要重写public clone()方法，才能使用
+            Student student3 = student22.clone();
+            student3.setName("lucy");
+            System.out.println(student22.getName());
+            // 5. 反序列化
+            ObjectInputStream in = new ObjectInputStream(new FileInputStream("data.obj"));
+            Student student4 = (Student) in.readObject();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (NoSuchMethodException e) {
+            e.printStackTrace();
+        } catch (InvocationTargetException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private static void getField() throws InstantiationException, IllegalAccessException, NoSuchFieldException {
