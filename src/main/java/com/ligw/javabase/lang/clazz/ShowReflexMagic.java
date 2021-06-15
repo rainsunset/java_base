@@ -50,6 +50,7 @@ public class ShowReflexMagic {
             student3.setName("lucy");
             System.out.println(student22.getName());
             // 5. 反序列化
+            // 要首先实现Serializable接口
             ObjectInputStream in = new ObjectInputStream(new FileInputStream("data.obj"));
             Student student4 = (Student) in.readObject();
         } catch (ClassNotFoundException e) {

@@ -2,7 +2,7 @@
  * Company
  * Copyright (C) 2004-2018 All Rights Reserved.
  */
-package com.ligw.javabase.algorithm;
+package com.ligw.javabase.algorithm.sort;
 
 /**
  * 排序算法

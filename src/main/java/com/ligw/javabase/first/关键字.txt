@@ -1,3 +1,15 @@
+JAVA关键字
+    数据类型：byte short int long float double char boolean class interface enum void
+    定义数据类型值：true false null
+    定义流程控制：if else switch case default while do for break continue return
+    定义访问权限修饰符：private protected public
+    定义类 函数 变量修饰符：abstract final static synchronized
+    定义类与类之间关系：extends implements
+    定义建立实例及引用实例判断实例：new this super instanceof
+    用于异常处理：try catch finally throw throws
+    用于包：package import
+    其他修饰符：native strictfp transient volatile assert
+
 类 函数 变量 修饰符：
     final
         修饰类：类不能被继承
@@ -18,7 +30,16 @@
         修饰方法：静态方法。该方法属于当前类，而不属于某个对象。静态方法不能被重写。显式调用。静态方法中不能有this或super关键词
         修饰变量：静态变量。被所有实例共享。静态变量在内存中只有一份拷贝，在JVM加载类的时候置为静态变量分配一次内存。
         修饰代码块：优化代码用。静态代码块在类加载的时候就会执行且只执行这一次，多个静态代码块按照先后顺序执行。
-
+        静态导包：
+        ``` java
+        import static java.lang.Math.*;
+        public class Test{
+            public static void main(String[] args){
+                //System.out.println(Math.sin(20));传统做法
+                System.out.println(sin(20));
+            }
+        }
+        ```
     synchronized
 
 
@@ -55,7 +76,8 @@ public  *          *         *    *
 
 回调：
     CallBack
-
     Hook（钩子函数）：通过多态实现 传入不同子类，调用不同实现  或传入接口的不同实现类，调用不同实现
-
     末班方法模式
+
+assert(断言):
+

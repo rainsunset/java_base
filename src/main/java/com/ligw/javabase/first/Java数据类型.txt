@@ -1,15 +1,3 @@
-JAVA关键字
-    数据类型：byte short int long float double char boolean class interface enum void
-    定义数据类型值：true false null
-    定义流程控制：if else switch case default while do for break continue return
-    定义访问权限修饰符：private protected public
-    定义类 函数 变量修饰符：abstract final static synchronized
-    定义类与类之间关系：extends implements
-    定义建立实例及引用实例判断实例：new this super instanceof
-    用于异常处理：try catch finally throw throws
-    用于包：package import
-    其他修饰符：native strictfp transient volatile assert
-
 JAVA数据类型
     基础数据类型
         ·数值型
