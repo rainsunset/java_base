@@ -39,12 +39,19 @@ nc www.baidu.com 80
 > 是什么: 面向连接的可靠的基于字节流的传输层通信协议  
 > 作用: 将应用层的数据流(依据MTU限制)分割成报文段(通过网络IP层)发送给目标节点的TCP层  
 > 数据包都有序号(SeqNo)，对方收到则发送ACK确认，若(在RTT时间内)未收到确认，则会重传  
-> 适应"校验和"来检验数据在传输过程中是否有误  
+> 使用"校验和"来检验数据在传输过程中是否有误  
 
 **连接**
 ![三次握手建立连接](http://resource.cmbi.info/8982be50-7457-4374-97e4-3601d9770e41)  
-第三次握手的必要性：服务端也必须收到确认响应  
-socket(连接建立后在内核中存储socket信息，后面基于socket传输数据 socket的唯一性)：四元组：[ip+host ip+host]  
+0. customer(closed)  -> service(closed) // 客户端和服务端都要创建传输控制块(Tcb)，服务端要进入listen状态  
+1. c --[SYN](SYN=1;seq=x)(不携带数据，但是要消耗掉一个序号)--> s // 客户端发送后进入同步已发送(SYN-SENT)的状态  
+2. c <--[SYN,ACK](SYN=1;ACK=1;seq=y,ack=x+1)(不懈怠数据,但消耗掉一个序列号)-- s // 服务端进入到SYN-RCVD的状态  
+3. c --[ACK](ACK=1;seq=x+1;ack=y+1)--> s // 给服务端确认报文。seq是服务端期望的序列号(ack)，ack是服务端过来的序列号(seq)+1.此时连接建立，客户端进入ESTAB-LISHED状态，服务端收到请求后进入ESTAB-LISHED状态。
+4. c <--(开启数据传输)--> s  
+
+第三次握手的必要性：服务端也必须收到确认响应 
+连接的唯一性： ip+port+协议 (套接字/socket)   
+socket(连接建立后在内核中存储socket信息，后面基于socket传输数据 socket的唯一性)：四元组：[ip+port ip+port]  
 port(端口号)的取值范围：65535(port分配原则1024？？？？)  
 ![四次分手](http://resource.cmbi.info/158ea83e-81bd-48ec-9657-621c73b85a03)  
 shell演示：
@@ -61,7 +68,9 @@ curl www.baidu.com
 ---|---|---|---|---|---|---|---|---|---|---|---
 内容|source port|destination port|seq Number|ACK Number|offset|保留域|TCP Flags|windows|checkSUM(校验和)|Urgert Pointer|TCP Options
 **checkSUM:** 是对TCP整个的报文段(包括TCP头部和TCP数据以16位计算所得，由发送端计算和存储并由接收端验证)
-
+**seq num：** 序号=上一报文段序号+上一报文段长度  
+**ack num:** 期望收到下一个报文的序列号。= seqNum + 报文长度  
+**offset:** 数据偏移(由于头部有可选字段，长度不固定)，指出tap报文数据离tap报文起始处有多远  
 **TCP Flags**  
 > URG:紧急指针标志（1表示紧急指针有效 0表示忽略紧急指针）  
 > **ACK:确认序号标志** （1表示确认号有效 0表示报文中不含确认信息，忽略确认号字段）  
@@ -70,6 +79,9 @@ curl www.baidu.com
 > **SYN:同步序列号**（用于建立连接过程 SYN为1且ACK为0表示该数据段没有使用捎带的确认域 SYN为1且ACK为1表示...）    
 > **FIN:finish标志**（用于释放连接 为1时表示数据发送放已经没有数据发送了）  
 
+**win:** 滑动窗口,流量控制
+三次握手以后，TCP将在两个应用程序之间建立一个全双工的通信,该通信将占用两个计算机之间的通信线路，直到被一方或双方关闭为止。  
+全双工： 
 
 三次握手建立连接->http传输数据->四次分手断开连接是一个线性过程
 > 1. 应用层申请建立连接->内核(应用层阻塞)
